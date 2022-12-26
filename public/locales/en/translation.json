@@ -1,0 +1,40 @@
+{
+  "search_input": {
+    "placeholder": "Search Your Property"
+  },
+  "navbar": {
+    "labels": {
+      "home": "Home",
+      "properties": "Properties",
+      "contact": "Contact",
+      "real_estates": "Real Estates",
+      "favorites": "Favorites",
+      "auth": "Account",
+      "logout": "Logout"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "forgot_password": "Forgot Password",
+    "forgot_password_edit": "Set New Password",
+    "forgot_password_question": "Forgot Password?",
+    "use_existing_account": "Do you have an existing account?",
+    "forgot_password_invalid_messsage": "Invalid Reset Password Token provided.",
+    "labels": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "password_confirmation": "Password Confirmation",
+      "submit_login": "Login",
+      "submit_register": "Register",
+      "submit_reset_password": "Reset Password"
+    }
+  },
+  "global": {
+    "validations": {
+      "required": "Required field."
+    }
+  }
+}

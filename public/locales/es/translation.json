@@ -1,0 +1,40 @@
+{
+  "search_input": {
+    "placeholder": "Busca Tu Propiedad"
+  },
+  "navbar": {
+    "labels": {
+      "home": "Inicio",
+      "properties": "Propiedades",
+      "contact": "Contacto",
+      "real_estates": "Inmobiliarias",
+      "favorites": "Favoritos",
+      "auth": "Cuenta",
+      "logout": "Cerrar Sesión"
+    }
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "forgot_password": "Recuperar Contraseña",
+    "forgot_password_edit": "Ingresar Nueva Contraseña",
+    "forgot_password_question": "Olvidaste tu Contraseña?",
+    "use_existing_account": "Tienes una cuenta existente?",
+    "forgot_password_invalid_messsage": "Se proporcionó un token de restablecimiento de contraseña no válido.",
+    "labels": {
+      "first_name": "Nombres",
+      "last_name": "Apelllidos",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "password_confirmation": "Confirmacion de Contraseña",
+      "submit_login": "Iniciar Sesión",
+      "submit_register": "Registrarse",
+      "submit_reset_password": "Recuperar Contraseña"
+    }
+  },
+  "global": {
+    "validations": {
+      "required": "Campo requerido."
+    }
+  }
+}
