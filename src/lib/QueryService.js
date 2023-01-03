@@ -1,28 +1,32 @@
-import { axiosAdminPath, axiosPublicPath } from "./axios.js";
+import { axiosAdminPath, axiosPublicPath, axiosRootPath } from "./axios.js";
+
+export const PATH_TYPES = {
+  PUBLIC: "PUBLIC",
+  ROOT: "ROOT",
+  ADMIN: "ADMIN"
+}
 
 export class QueryService {
-  constructor(basePath, adminPath = false, headers = {}) {
-    this.http = adminPath ? axiosAdminPath(headers) : axiosPublicPath(headers);
+  constructor(basePath, adminPath = PATH_TYPES.PUBLIC, headers = {}) {
+    let http;
+    switch (adminPath) {
+      case PATH_TYPES.ROOT:
+        http = axiosRootPath(headers);
+        break;
+      case PATH_TYPES.ADMIN:
+        http = axiosAdminPath(headers);
+        break;
+      default:
+        http = axiosPublicPath(headers);
+        break;
+    }
+
+    this.http = http;
     this.basePath = basePath;
   }
 
   findAll = async () => {
     return await this.http.get(this.basePath).then(res => res.data);
-  };
-
-  find = async (params = { page: { size: "10", number: "1" } }) => {
-    const { page } = params;
-
-    const queries = {
-      "page[size]": page.size,
-      "page[number]": page.number
-    };
-
-    const queryString = new URLSearchParams(queries).toString();
-
-    return this.http
-      .get(`${this.basePath}?${queryString}`)
-      .then(res => res.data);
   };
 
   findOne = async (id) => {

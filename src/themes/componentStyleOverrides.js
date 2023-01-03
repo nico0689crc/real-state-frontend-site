@@ -22,10 +22,10 @@ const componentStyleOverrides = ({isDarkMode, colors, theme}) => {
               fontWeight: theme.typography.fontWeightBold,
             },
             "&:hover": {
-              backgroundColor: theme.palette.primary[100]
+              backgroundColor: colors.primary[100]
             },
             "&.linkActive": {
-              backgroundColor: theme.palette.primary[200]
+              backgroundColor: colors.primary[100]
             }
           }
         }
@@ -50,6 +50,9 @@ const componentStyleOverrides = ({isDarkMode, colors, theme}) => {
             borderBottomRightRadius: "0.25rem",
             height: "100%",
             transition,
+            "&.NonBorderBottomRadius": {
+              borderBottomRightRadius: 0,
+            },
             "svg": {
               color: colors.grey[500],
               transition,
@@ -68,7 +71,7 @@ const componentStyleOverrides = ({isDarkMode, colors, theme}) => {
             },
             "svg": {
               fontSize: "1rem", 
-              color: theme.palette.grey[700],
+              color: colors.grey[700],
               transition,
               "&:hover": {
                 fontSize: "1.1rem"
@@ -92,6 +95,12 @@ const componentStyleOverrides = ({isDarkMode, colors, theme}) => {
               borderRadius: 0,
               borderTopLeftRadius: "0.25rem",
               borderBottomLeftRadius: "0.25rem",
+            },
+
+            "&.NonBorderBottomRadius": {
+              "input": {
+                borderBottomLeftRadius: 0, 
+              }
             }
           }
         }

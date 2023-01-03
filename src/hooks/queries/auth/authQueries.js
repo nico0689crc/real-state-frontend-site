@@ -1,10 +1,10 @@
 import { useMutation, useQuery } from "react-query";
-import { QueryService } from "lib/QueryService";
+import { QueryService, PATH_TYPES } from "lib/QueryService";
 import API_ENDPOINTS from "constants/endpoints";
 import getUserData from "lib/getUserData";
 
 export const useLoginMutation = (onSuccessHandler, onErrorHandler) => {
-  const loginQueryServices = new QueryService(API_ENDPOINTS.LOGIN);
+  const loginQueryServices = new QueryService(API_ENDPOINTS.LOGIN, PATH_TYPES.ROOT);
 
   return useMutation(input => loginQueryServices.login(input),{
     onSuccess: (data) => onSuccessHandler(data),
@@ -13,7 +13,7 @@ export const useLoginMutation = (onSuccessHandler, onErrorHandler) => {
 };
 
 export const useRegisterMutation = (onSuccessHandler, onErrorHandler) => {
-  const registerQueryServices = new QueryService(API_ENDPOINTS.REGISTER);
+  const registerQueryServices = new QueryService(API_ENDPOINTS.REGISTER, PATH_TYPES.ROOT);
 
   return useMutation(input => registerQueryServices.post(input),{
     onSuccess: (data) => onSuccessHandler(data),
@@ -22,7 +22,7 @@ export const useRegisterMutation = (onSuccessHandler, onErrorHandler) => {
 };
 
 export const useResetPasswordMutation = (onSuccessHandler, onErrorHandler) => {
-  const resetPasswordQueryServices = new QueryService(API_ENDPOINTS.RESET_PASSWORD);
+  const resetPasswordQueryServices = new QueryService(API_ENDPOINTS.RESET_PASSWORD, PATH_TYPES.ROOT);
 
   return useMutation(input => resetPasswordQueryServices.resetPassword(input),{
     onSuccess: (data) => onSuccessHandler(data),
@@ -31,8 +31,7 @@ export const useResetPasswordMutation = (onSuccessHandler, onErrorHandler) => {
 };
 
 export const useResetPasswordEditMutation = (onSuccessHandler, onErrorHandler, headers) => {
-  const pathRequireAuthentication = false;
-  const resetPasswordEditQueryServices = new QueryService(API_ENDPOINTS.RESET_PASSWORD, pathRequireAuthentication, headers);
+  const resetPasswordEditQueryServices = new QueryService(API_ENDPOINTS.RESET_PASSWORD, PATH_TYPES.ROOT, headers);
 
   return useMutation(input => resetPasswordEditQueryServices.resetPasswordEdit(input),{
     onSuccess: (data) => onSuccessHandler(data),
@@ -42,7 +41,7 @@ export const useResetPasswordEditMutation = (onSuccessHandler, onErrorHandler, h
 
 export const useValidateTokenQuery = onSuccessHandler => {
   const { uid, accessToken, client } = getUserData();
-  const validateQueryServices = new QueryService(API_ENDPOINTS.VALIDATE_TOKEN);
+  const validateQueryServices = new QueryService(API_ENDPOINTS.VALIDATE_TOKEN, PATH_TYPES.ROOT);
 
   return useQuery(
     [API_ENDPOINTS.VALIDATE_TOKEN, "VALIDATE_TOKEN"], 

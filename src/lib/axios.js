@@ -55,3 +55,28 @@ export const axiosPublicPath = (headers) => {
 
   return request;
 }
+
+export const axiosRootPath = (headers) => {
+  const request = axios.create({
+    baseURL: process.env.REACT_APP_BACKEND_ROOT,
+    timeout: 30000,
+    headers: {
+      "Content-Type": "application/json",
+      ...headers
+    },
+  });
+
+  request.interceptors.request.use(
+    config => {
+      config.headers = {
+        ...config.headers
+      };
+      return config;
+    },
+    error => {
+      return Promise.reject(error);
+    }
+  );
+
+  return request;
+}

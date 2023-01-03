@@ -10,7 +10,7 @@ const Header = () => {
   const [mobileSearchInputOpened, setMobileSearchInputOpened] = useState(false);
   const theme = useTheme();
   const isUpMdBreakpoint = useMediaQuery(theme.breakpoints.up("md"));
-  // theme.typography.fontWeightRegular
+
   const toggleMobileSearchInput = () => {
     setMobileSearchInputOpened(() => !mobileSearchInputOpened)
   }
