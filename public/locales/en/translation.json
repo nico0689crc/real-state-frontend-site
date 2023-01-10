@@ -2,6 +2,10 @@
   "search_input": {
     "placeholder": "Search Your Property"
   },
+  "hero_header": {
+    "title": "Your Local Real Estate Professionals",
+    "sub_title": "Residences can be classified by and connected to residences. Different types of housing can be use same physical type."
+  },
   "navbar": {
     "labels": {
       "home": "Home",
@@ -32,7 +36,24 @@
       "submit_reset_password": "Reset Password"
     }
   },
+  "properties": {
+    "rent": "Rent",
+    "sale": "Sale",
+    "house": "House",
+    "appartment": "Appartment",
+    "commercial_building": "Commercial Building",
+    "labels": {
+      "search_name": "Search by name",
+      "property_type": "Property Type",
+      "rooms": "Rooms",
+      "beds": "Beds",
+      "baths": "Baths"
+    }
+  },
   "global": {
+    "labels": {
+      "search": "Search"
+    },
     "validations": {
       "required": "Required field."
     }

@@ -2,6 +2,10 @@
   "search_input": {
     "placeholder": "Busca Tu Propiedad"
   },
+  "hero_header": {
+    "title": "Sus profesionales inmobiliarios locales",
+    "sub_title": "Las residencias se pueden clasificar por residencias y conectarse a ellas. Se pueden utilizar diferentes tipos de vivienda del mismo tipo físico."
+  },
   "navbar": {
     "labels": {
       "home": "Inicio",
@@ -32,7 +36,24 @@
       "submit_reset_password": "Recuperar Contraseña"
     }
   },
+  "properties": {
+    "rent": "Alquiler",
+    "sale": "Venta",
+    "house": "Casa",
+    "appartment": "Departamento",
+    "commercial_building": "Edificio Comercial",
+    "labels": {
+      "search_name": "Buscar por nombre",
+      "property_type": "Tipo de propiedad",
+      "rooms": "Habitaciones",
+      "beds": "Camas",
+      "baths": "Baños"
+    }
+  },
   "global": {
+    "labels": {
+      "search": "Buscar"
+    },
     "validations": {
       "required": "Campo requerido."
     }
