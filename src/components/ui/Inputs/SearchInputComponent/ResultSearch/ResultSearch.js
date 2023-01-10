@@ -1,9 +1,20 @@
-import { SearchOffOutlined } from "@mui/icons-material";
-import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, useTheme } from "@mui/material";
+import { LocationOnOutlined, MapsHomeWorkOutlined, RoomPreferencesOutlined, SearchOffOutlined } from "@mui/icons-material";
+import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
+
+const PropertyDetail = ({itemLabel, icon}) => {
+
+  return (
+    <Stack direction="row" spacing={0.5}>
+      {icon}
+      <Typography color="GrayText" variant="caption">{itemLabel}</Typography>
+    </Stack>
+  );
+}
 
 const ResultSearch = ({properties = []}) => {
-  const theme = useTheme();
-  
+  const { t } = useTranslation();
+
   return (
     <List dense={true}>
       {properties.length === 0 ? (
@@ -16,26 +27,30 @@ const ResultSearch = ({properties = []}) => {
       ) : (
         properties.map((item, index) => (
           <ListItem key={index} disablePadding>
-            <ListItemButton sx={{
-              padding: 1,
-              columnGap: 1,
-              height: "58px",
-              [theme.breakpoints.up('md')]: {
-                padding: 1.5,
-                height: "116px",
-              },
-            }}>
-              <Box sx={{
-                backgroundImage: `url(${item.media[0].media_path})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                width: "58px",
-                height: "100%",
-                [theme.breakpoints.up('md')]: {
-                  width: "116px",
-                },
-              }}></Box>
+            <ListItemButton sx={{ paddingY: 1, paddingX: 2 }}>
+              <Stack spacing={0.5}>
+                <Typography variant="body1">{item.title}</Typography>
+                <Grid container gap={2}>
+                  <Grid item xs={12} md="auto" justifyContent="center">
+                    <PropertyDetail 
+                      itemLabel={item.address} 
+                      icon={<LocationOnOutlined color="GrayText" fontSize="small"/>}
+                    />
+                  </Grid>
+                  <Grid item xs="auto">
+                    <PropertyDetail 
+                      itemLabel={t(`properties.${item.p_type}`)} 
+                      icon={<MapsHomeWorkOutlined color="GrayText" fontSize="small" />}
+                    />
+                  </Grid>
+                  <Grid item xs="auto">
+                    <PropertyDetail 
+                      itemLabel={t(`properties.${item.p_status}`)} 
+                      icon={<RoomPreferencesOutlined color="GrayText" fontSize="small" />}
+                    />
+                  </Grid>
+                </Grid>
+              </Stack>
             </ListItemButton>
           </ListItem>
         ))

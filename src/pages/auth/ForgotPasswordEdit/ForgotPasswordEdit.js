@@ -15,8 +15,8 @@ const getFormSchema = (t) => {
   });
 
   const defaultValues = {
-    "password": "AAEERRaaa!@2022",
-    "password_confirmation": "AAEERRaaa!@2022"
+    "password": "",
+    "password_confirmation": ""
   };
 
   return {

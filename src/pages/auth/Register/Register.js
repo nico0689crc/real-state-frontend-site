@@ -17,11 +17,11 @@ const getFormSchema = (t) => {
   });
 
   const defaultValues = {
-    "first_name": "Vicolas",
-    "last_name": "Vernandez",
-    "email": "nico.06.89crc+1@gmail.com",
-    "password": "AAEERRaaa!@2022",
-    "password_confirmation": "AAEERRaaa!@2022",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "password": "",
+    "password_confirmation": "",
   };
 
   return {

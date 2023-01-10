@@ -15,7 +15,7 @@ const getFormSchema = (t) => {
   });
 
   const defaultValues = {
-    "email": "nico.06.89crc+1@gmail.com"
+    "email": ""
   };
 
   return {

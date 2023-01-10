@@ -13,11 +13,11 @@ const MIN_CHARACTERES_TO_SEARCH = 3;
 const SearchInputComponent = () => {
   const { t } = useTranslation();
   const [showClearSearchInput, setShowClearSearchInput] = useState(false);
-  const [showSearchResult, setShowSearchResult] = useState(true);
+  const [showSearchResult, setShowSearchResult] = useState(false);
   const [searchResultParams, setSearchResultParams] = useState(null);
   const inputRef = useRef(null);
   
-  const { isFetching, isSuccess, data: properties, refetch: refetchProperties } = usePropertiesQuery({ 
+  const { data: properties, refetch: refetchProperties } = usePropertiesQuery({ 
     params: searchResultParams,
     config: { enabled: false } 
   });
@@ -43,7 +43,7 @@ const SearchInputComponent = () => {
   }
 
   const onFocusSearchInputHandler = () => setShowSearchResult(true);
-  const onBlurSearchInputHandler = () => setShowSearchResult(true);
+  const onBlurSearchInputHandler = () => setShowSearchResult(false);
 
   const onClearSearchInputHandler = () => {
     inputRef.current.firstChild.value = "";

@@ -16,7 +16,7 @@ const Header = () => {
   }
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{ marginBottom: { xs: 2, md: 4 } }}>
       <Stack spacing={2} width="100%">
         <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={1} sx={{position: "relative"}}>
           <Logo />
